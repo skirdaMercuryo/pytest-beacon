@@ -10,8 +10,8 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with:
-          repository: l0kifs/pytest-beacon
-          ref: 22aaff4fdadcd1f631f9391b0e7044175c9c4933
+          repository: skirdaMercuryo/pytest-beacon
+          ref: 923514bff2a8e4426773a85d6b51758da8ae7425
       - uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.12'
