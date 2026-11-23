@@ -1,0 +1,25 @@
+name: QAT-344 verification
+on:
+  push:
+    branches: [chore/QAT-344-ci-verification]
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          repository: l0kifs/pytest-beacon
+          ref: 22aaff4fdadcd1f631f9391b0e7044175c9c4933
+      - uses: astral-sh/setup-uv@v6
+        with:
+          python-version: '3.12'
+          enable-cache: false
+      - name: Run all plugin tests
+        run: uv run pytest -q --junitxml=verification-results.xml
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: verification-results
+          path: verification-results.xml
