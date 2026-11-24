@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: skirdaMercuryo/pytest-beacon
-          ref: e4005bf25f261266537279e63c88d6cdf5b8e550
+          ref: 6c99eb8080e505604cb8145026b5dee5b6db6ab0
       - uses: astral-sh/setup-uv@v6
         with:
           python-version: '3.12'
